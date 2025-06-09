@@ -157,13 +157,7 @@ const Home = () => {
             {recentNews.map((news, index) => (
               <AnimatedSection key={news.id} delay={0.1 * index}>
                 <div className="bg-gray-50 rounded-lg overflow-hidden shadow-sm h-full">
-                  {news.image && (
-                    <img 
-                      src={news.image} 
-                      alt={news.title}
-                      className="w-full h-48 object-cover"
-                    />
-                  )}
+                  
                   <div className="p-6">
                     <span className="text-sm text-gray-500 mb-2 block">
                       {new Date(news.date).toLocaleDateString('en-US', {
