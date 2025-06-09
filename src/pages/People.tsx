@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Link as LinkIcon } from 'lucide-react';
+import { Mail, Link as LinkIcon,X } from 'lucide-react';
 import SectionHeading from '../components/common/SectionHeading';
 import AnimatedSection from '../components/common/AnimatedSection';
 import { people, Person } from '../data/peopleData';
@@ -104,9 +104,18 @@ const People = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                className="bg-white w-full h-full rounded-none shadow-none overflow-y-auto"
                 onClick={e => e.stopPropagation()}
               >
+                <div className="absolute top-10 right-12 z-10">
+                <button 
+                  onClick={() => setSelectedPerson(null)} 
+                  className="text-gray-500 hover:text-black p-2 rounded-full hover:bg-gray-100 transition"
+                  aria-label="Close"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
                 <div className="md:flex">
                   <div className="md:w-2/5">
                     <img 
