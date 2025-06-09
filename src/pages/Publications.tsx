@@ -84,10 +84,10 @@ const Publications = () => {
               <label className="block text-sm font-medium text-gray-700">Filter by Type</label>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { value: 'all', label: 'All Publications' },
+                  { value: 'all', label: 'All' },
                   { value: 'journal', label: 'Journal Articles' },
-                  { value: 'conference', label: 'Conference Papers' },
-                  { value: 'book', label: 'Books & Chapters' }
+                  { value: 'conference', label: 'Patents' },
+                  { value: 'book', label: 'Books Chapters' }
                 ].map(item => (
                   <button
                     key={item.value}
@@ -104,7 +104,7 @@ const Publications = () => {
               </div>
             </div>
             
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <label className="block text-sm font-medium text-gray-700">Sort by Year</label>
               <div className="flex gap-3">
                 {[
@@ -124,7 +124,7 @@ const Publications = () => {
                   </button>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
           
           {/* Publications List */}

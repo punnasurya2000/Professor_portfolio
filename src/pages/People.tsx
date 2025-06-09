@@ -59,37 +59,16 @@ const People = () => {
       <section className="section bg-white">
         <div className="container-wide">
           <SectionHeading 
-            title="Lab Members" 
-            subtitle="Our team consists of dedicated researchers at various career stages, all working together to advance the frontiers of materials science and manufacturing technology."
+            title="Team Members" 
+            subtitle=""
+            centered={true}
           />
           
           {/* Filters */}
-          <div className="flex flex-wrap gap-3 mb-12">
-            {[
-              { value: 'all', label: 'All Members' },
-              { value: 'faculty', label: 'Faculty' },
-              { value: 'postdoc', label: 'Postdoctoral Researchers' },
-              { value: 'phd', label: 'Ph.D. Students' },
-              { value: 'masters', label: 'Master\'s Students' },
-              { value: 'undergrad', label: 'Undergraduate Researchers' },
-              { value: 'alumni', label: 'Alumni' }
-            ].map(item => (
-              <button
-                key={item.value}
-                onClick={() => setCategory(item.value as Category)}
-                className={`px-4 py-2 rounded-md transition-colors ${
-                  category === item.value 
-                    ? 'bg-primary-600 text-white' 
-                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+           
           
           {/* People Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredPeople.map((person, index) => (
               <AnimatedSection key={person.id} delay={0.1 * index} className="h-full">
                 <div 
@@ -106,12 +85,12 @@ const People = () => {
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-2">{person.name}</h3>
                     <p className="text-gray-600 mb-4">{person.title}</p>
-                    <p className="text-gray-700 line-clamp-3 mb-4">{person.bio}</p>
+                    {/* <p className="text-gray-700 line-clamp-3 mb-4">{person.bio}</p>
                     <span className="inline-block px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm capitalize">
                       {person.category === 'phd' ? 'Ph.D. Student' : 
                        person.category === 'postdoc' ? 'Postdoctoral Researcher' : 
                        person.category}
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </AnimatedSection>
@@ -187,68 +166,7 @@ const People = () => {
         </div>
       </section>
 
-      {/* Join Our Team */}
-      <section className="section bg-gray-50">
-        <div className="container-wide">
-          <SectionHeading 
-            title="Join Our Team" 
-            subtitle="We're always looking for talented individuals who are passionate about materials science and manufacturing technology."
-          />
-          
-          <AnimatedSection>
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <h3 className="text-xl font-semibold mb-4">Open Positions</h3>
-              <p className="text-gray-700 mb-6">
-                We regularly have openings for graduate students, postdoctoral researchers, and undergraduate researchers. If you're interested in joining our lab, please review the information below.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-lg font-medium mb-3">Ph.D. Students</h4>
-                  <p className="text-gray-700 mb-4">
-                    We are looking for motivated Ph.D. students with a strong background in materials science, mechanical engineering, or related fields.
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-gray-700">
-                    <li>Fall admission deadline: December 15</li>
-                    <li>Spring admission deadline: October 1</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-lg font-medium mb-3">Postdoctoral Researchers</h4>
-                  <p className="text-gray-700 mb-4">
-                    Postdoctoral positions are available based on funding and project needs. Candidates should have a Ph.D. in a relevant field and a strong publication record.
-                  </p>
-                  <p className="text-gray-700">
-                    Positions are advertised as they become available.
-                  </p>
-                </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-lg font-medium mb-3">Undergraduate Researchers</h4>
-                  <p className="text-gray-700 mb-4">
-                    We welcome undergraduate students interested in gaining research experience. Students should have completed relevant coursework and be able to commit at least 10 hours per week.
-                  </p>
-                  <p className="text-gray-700">
-                    Applications accepted on a rolling basis.
-                  </p>
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-semibold mb-4">How to Apply</h3>
-              <p className="text-gray-700 mb-4">
-                If you're interested in joining our lab, please send the following information to Dr. Rahman at mrahman19@uh.edu:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
-                <li>CV or resume</li>
-                <li>Brief statement of research interests and experience</li>
-                <li>Academic transcripts</li>
-                <li>Contact information for 2-3 references</li>
-              </ul>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      
     </div>
   );
 };
