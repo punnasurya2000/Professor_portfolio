@@ -3,9 +3,9 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SectionHeading from '../components/common/SectionHeading';
 import AnimatedSection from '../components/common/AnimatedSection';
-import { researchAreas } from '../data/researchData';
+ 
 import { newsItems } from '../data/newsData';
-
+import imageData from '../../images/Homepage.png';
 const Home = () => {
   // Get the three most recent news items
   const recentNews = [...newsItems].sort((a, b) => 
@@ -19,9 +19,9 @@ const Home = () => {
       <div className="absolute inset-0 z-0 overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />
   <img
-    src="/images/Homepage.png"
+    src={imageData}
     alt="Laboratory research"
-    className="w-full h-[120%] object-cover translate-y-[70px]"
+    className="w-full h-[140%] object-cover translate-y-[70px]"
   />
 </div>
 
