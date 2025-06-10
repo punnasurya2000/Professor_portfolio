@@ -35,29 +35,9 @@ const Home = () => {
           >
           <div className="flex items-center space-x-2">
       <h1 className="font-thin text-7xl md:text-8xl tracking-widest">
-        Maksud
+        Maksud Lab 
       </h1>
-      <div className="relative">
-        <span className="italic text-blue-300 text-7xl md:text-8xl">Lab</span>
-
-        {/* Flowing SVG tail */}
-        <svg
-          className="absolute -right-24 -top-2 hidden md:block"
-          width="120"
-          height="40"
-          viewBox="0 0 120 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 30 C30 0, 60 60, 120 10"
-            stroke="#7dd3fc"
-            strokeWidth="4"
-            fill="transparent"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
+   
     </div>
 
 
@@ -99,13 +79,13 @@ const Home = () => {
       {/* Introduction Section */}
       <section className="section bg-white">
         <div className="container-wide">
-          <div className='Flex flex-col items-center justify-center text-center px-4 py-16 max-w-3xl mx-auto'>
+          <div className='Flex flex-col items-center justify-center text-center px-4 pb-2 max-w-3xl mx-auto'>
           <h2 className="text-3xl md:text-4xl font-medium mb-6 text-gray-900">
       Welcome to Our Lab
     </h2>
 
           </div>
-        <div className="flex flex-col items-center justify-center text-center px-4 py-16 max-w-3xl mx-auto">
+        <div className="flex flex-col items-center justify-center text-center px-4 py-16 max-w-5xl mx-auto">
   <AnimatedSection delay={0.2}>
     
     <p className="text-gray-700 text-lg mb-4">
@@ -124,7 +104,7 @@ const Home = () => {
       I hope you enjoy my website and find information here. If you are influenced to make science your way of life, please feel free to contact me. I value creativity, honesty, comprehensiveness, and persistence in every person with whom I work.
     </p>
 
-    <p className="text-gray-800 text-lg font-semibold mb-6">
+    <p className="text-gray-800 text-lg font-semibold mb-5">
       All the best,<br />
       Maksud Rahman
     </p>
@@ -145,7 +125,7 @@ const Home = () => {
       {/* Research Highlights */}
       
       {/* Latest News */}
-      <section className="section bg-white">
+      <section className="section bg-white pt-4">
         <div className="container-wide">
           <SectionHeading 
             title="Latest News" 
