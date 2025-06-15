@@ -137,9 +137,18 @@ const Publications = () => {
                 <div className="space-y-6">
                   {publicationsByYear[Number(year)].map(publication => (
                     <div 
-                      key={publication.id}
-                      className="bg-gray-50 rounded-lg p-6 transition-all duration-300 hover:shadow-md"
-                    >
+                    key={publication.id}
+                    className="bg-gray-50 rounded-lg p-6 transition-all duration-300 hover:shadow-md flex flex-col md:flex-row gap-6 items-start"
+                  >
+                    {/* Left: Image */}
+                    <img 
+                      src={publication.image || "/default-publication-image.png"} // Replace with actual image field
+                      alt="Publication"
+                      className="w-32 h-32 object-cover rounded-md flex-shrink-0"
+                    />
+
+                    {/* Right: Text Content */}
+                    <div className="flex-1">
                       <h3 className="text-xl font-medium mb-2">{publication.title}</h3>
                       <p className="text-gray-700 mb-3">{publication.authors}</p>
                       <p className="text-gray-600 mb-4">
@@ -155,7 +164,7 @@ const Publications = () => {
                           </a></>
                         )}
                       </p>
-                      
+
                       {publication.abstract && (
                         <div className="mt-4">
                           <button
@@ -164,7 +173,7 @@ const Publications = () => {
                           >
                             {expandedId === publication.id ? 'Hide Abstract' : 'Show Abstract'}
                           </button>
-                          
+
                           {expandedId === publication.id && (
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
@@ -179,7 +188,7 @@ const Publications = () => {
                           )}
                         </div>
                       )}
-                      
+
                       <div className="mt-4">
                         <span className="inline-block px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">
                           {publication.category === 'journal' ? 'Journal Article' : 
@@ -188,6 +197,8 @@ const Publications = () => {
                         </span>
                       </div>
                     </div>
+                  </div>
+
                   ))}
                 </div>
               </AnimatedSection>
