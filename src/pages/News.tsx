@@ -50,29 +50,7 @@ const News = () => {
         <div className="container-wide">
           <SectionHeading 
             title="Lab News" 
-            subtitle="Explore our latest news"
           />
-
-          {/* Filters */}
-          <div className="flex flex-wrap gap-3 mb-12">
-            {[
-              { value: 'all', label: 'All News' },
-              
-            ].map(item => (
-              <button
-                key={item.value}
-                onClick={() => setCategory(item.value as Category)}
-                className={`px-4 py-2 rounded-md transition-colors ${
-                  category === item.value 
-                    ? 'bg-primary-600 text-white' 
-                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-          
           {/* News Timeline */}
           <div className="space-y-12">
             {filteredNews.map((item, index) => (

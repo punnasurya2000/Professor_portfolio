@@ -47,8 +47,7 @@ const Research = () => {
       <section className="section bg-gray-50">
         <div className="container-wide">
           <SectionHeading 
-            title="Research Areas" 
-            subtitle="Explore our primary research areas and ongoing projects."
+            title="Research Areas"
           />
           
           {/* Filter Buttons */}
