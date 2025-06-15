@@ -129,7 +129,6 @@ const Home = () => {
         <div className="container-wide">
           <SectionHeading 
             title="Latest News" 
-            subtitle="Stay updated with the most recent activities, publications, and achievements from our lab."
             centered
           />
           
@@ -184,12 +183,7 @@ const Home = () => {
               >
                 Contact Us
               </Link>
-              <Link
-                to="/people"
-                className="px-8 py-3 bg-primary-800 hover:bg-primary-700 rounded-md font-medium transition-colors"
-              >
-                Join Our Team
-              </Link>
+              
             </div>
           </AnimatedSection>
         </div>
