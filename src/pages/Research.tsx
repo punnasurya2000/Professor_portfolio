@@ -43,35 +43,6 @@ const Research = () => {
         </div>
       </section>
 
-      {/* Research Overview */}
-      <section className="section bg-white">
-        <div className="container-wide">
-          <SectionHeading 
-            title="Research Overview" 
-            subtitle="Our lab's research spans multiple interconnected areas, focusing on the development of novel materials and manufacturing processes."
-          />
-          
-          <AnimatedSection>
-            <p className="text-gray-700 mb-8">
-              At the Rahman Lab, we take an interdisciplinary approach to research, combining principles from materials science, mechanical engineering, and computational modeling. Our work is motivated by the need for advanced materials that can meet the increasingly complex demands of various industries, from aerospace and automotive to biomedical and energy.
-            </p>
-            <p className="text-gray-700 mb-8">
-              We are particularly interested in:
-            </p>
-            <ul className="list-disc list-inside space-y-3 text-gray-700 mb-8">
-              <li>Developing multifunctional composite materials with enhanced mechanical, electrical, and thermal properties</li>
-              <li>Advancing additive manufacturing techniques for complex structures with precise control over material composition</li>
-              <li>Exploring bio-inspired design principles to create materials with superior performance characteristics</li>
-              <li>Integrating nanomaterials into larger structures while preserving their unique properties</li>
-              <li>Creating sustainable manufacturing processes and materials with reduced environmental impact</li>
-            </ul>
-            <p className="text-gray-700">
-              Our research is supported by various funding agencies, including the National Science Foundation (NSF), the Department of Energy (DOE), and industry partners. We collaborate with researchers across disciplines and institutions to tackle challenging problems and translate our findings into practical applications.
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* Research Areas */}
       <section className="section bg-gray-50">
         <div className="container-wide">
@@ -150,110 +121,9 @@ const Research = () => {
         </div>
       </section>
 
-      {/* Research Facilities */}
-      <section className="section bg-white">
-        <div className="container-wide">
-          <SectionHeading 
-            title="Research Facilities" 
-            subtitle="Our lab is equipped with state-of-the-art equipment for materials synthesis, characterization, and testing."
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <AnimatedSection>
-              <div className="bg-gray-50 rounded-lg p-6 h-full">
-                <h3 className="text-xl font-semibold mb-4">Materials Synthesis and Processing</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Multi-material 3D printers</li>
-                  <li>Composite fabrication equipment</li>
-                  <li>Vacuum assisted resin transfer molding system</li>
-                  <li>High-temperature furnaces</li>
-                  <li>Nanomaterial synthesis setup</li>
-                </ul>
-              </div>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.1}>
-              <div className="bg-gray-50 rounded-lg p-6 h-full">
-                <h3 className="text-xl font-semibold mb-4">Materials Characterization</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Scanning electron microscopy (SEM)</li>
-                  <li>X-ray diffraction (XRD)</li>
-                  <li>Thermal analysis equipment (DSC, TGA)</li>
-                  <li>Mechanical testing systems</li>
-                  <li>Optical microscopy</li>
-                </ul>
-              </div>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.2}>
-              <div className="bg-gray-50 rounded-lg p-6 h-full">
-                <h3 className="text-xl font-semibold mb-4">Computational Resources</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>High-performance computing cluster</li>
-                  <li>Finite element analysis software</li>
-                  <li>Molecular dynamics simulation tools</li>
-                  <li>Material design and optimization software</li>
-                </ul>
-              </div>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={0.3}>
-              <div className="bg-gray-50 rounded-lg p-6 h-full">
-                <h3 className="text-xl font-semibold mb-4">Testing and Analysis</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Mechanical property testing equipment</li>
-                  <li>Electrical and thermal conductivity measurements</li>
-                  <li>Environmental testing chambers</li>
-                  <li>Acoustic emission analysis</li>
-                  <li>Non-destructive testing equipment</li>
-                </ul>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
+      
 
-      {/* Collaborations */}
-      <section className="section bg-gray-50">
-        <div className="container-wide">
-          <SectionHeading 
-            title="Research Collaborations" 
-            subtitle="We collaborate with academic institutions, industry partners, and government laboratories to advance our research goals."
-          />
-          
-          <AnimatedSection>
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <p className="text-gray-700 mb-6">
-                Our research benefits from close collaborations with experts across various fields and institutions. These partnerships allow us to tackle complex problems from multiple perspectives and accelerate the translation of our research into practical applications.
-              </p>
-              
-              <h3 className="text-xl font-semibold mb-4">Academic Partners</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                <li>Massachusetts Institute of Technology - Department of Materials Science and Engineering</li>
-                <li>University of California, Berkeley - Department of Mechanical Engineering</li>
-                <li>Georgia Institute of Technology - School of Aerospace Engineering</li>
-                <li>Rice University - Department of Chemistry</li>
-                <li>Texas A&M University - Department of Materials Science and Engineering</li>
-              </ul>
-              
-              <h3 className="text-xl font-semibold mb-4">Industry Partners</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                <li>Aerospace Manufacturing Companies</li>
-                <li>Automotive Materials Suppliers</li>
-                <li>Advanced Materials Startups</li>
-                <li>3D Printing Technology Developers</li>
-              </ul>
-              
-              <h3 className="text-xl font-semibold mb-4">Government Laboratories</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
-                <li>National Renewable Energy Laboratory (NREL)</li>
-                <li>Oak Ridge National Laboratory (ORNL)</li>
-                <li>NASA Johnson Space Center</li>
-              </ul>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      
     </div>
   );
 };
