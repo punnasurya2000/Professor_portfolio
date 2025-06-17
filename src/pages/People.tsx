@@ -26,7 +26,7 @@ const People = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-900">
+      <section className="relative h-[250px] bg-gray-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -35,7 +35,7 @@ const People = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-wide relative z-20 text-white">
+        <div className="container-wide relative z-20 text-white pt-24">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ const People = () => {
            
           
           {/* People Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {filteredPeople.map((person, index) => (
               <AnimatedSection key={person.id} delay={0.1 * index} className="h-full">
                 <div 

@@ -14,7 +14,7 @@ const Research = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-900">
+      <section className="relative h-[250px] bg-gray-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -23,7 +23,7 @@ const Research = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-wide relative z-20 text-white">
+        <div className="container-wide relative z-20 text-white pt-24">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

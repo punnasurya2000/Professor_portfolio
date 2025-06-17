@@ -104,7 +104,7 @@ const Home = () => {
       I hope you enjoy my website and find information here. If you are influenced to make science your way of life, please feel free to contact me. I value creativity, honesty, comprehensiveness, and persistence in every person with whom I work.
     </p>
 
-    <p className="text-gray-800 text-lg font-semibold mb-5">
+    <p className="text-gray-800 text-lg font-semibold mb-5 pt-20">
       All the best,<br />
       Maksud Rahman
     </p>

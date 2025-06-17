@@ -41,7 +41,7 @@ const Publications = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-900">
+      <section className="relative  h-[250px] bg-gray-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -50,7 +50,7 @@ const Publications = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-wide relative z-20 text-white">
+        <div className="container-wide relative z-20 text-white pt-24">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,17 +71,15 @@ const Publications = () => {
       </section>
 
       {/* Publications Section */}
-      <section className="section bg-white">
+      <section className="section bg-white pt-10 mg-8">
         <div className="container-wide">
           <SectionHeading 
             title="Our Publications" 
-            subtitle="Browse our research publications, filter by type, and sort by year."
           />
           
           {/* Filters and Sort */}
           <div className="flex flex-wrap gap-6 mb-12">
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">Filter by Type</label>
               <div className="flex flex-wrap gap-3">
                 {[
                   { value: 'all', label: 'All' },

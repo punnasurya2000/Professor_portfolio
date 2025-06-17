@@ -43,6 +43,7 @@ export default {
           900: '#78350f',
           950: '#451a03',
         },
+        maksud:'#1c4532',
       },
       fontFamily: {
         sans: ['Inter var', 'Inter','Raleway', 'system-ui', 'sans-serif'],

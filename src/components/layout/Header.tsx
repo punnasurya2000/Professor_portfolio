@@ -28,7 +28,7 @@ const Header = () => {
       <div className="container-wide flex justify-between items-center">
         <Link
           to="/"
-          className="text-2xl font-semibold text-primary-800 hover:text-primary-700 transition-colors"
+          className="text-3xl font-bold text-green-900 hover:text-green-900 transition-colors"
         >
           Maksud Lab
         </Link>
@@ -41,8 +41,8 @@ const Header = () => {
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                 className={({ isActive }) =>
-                  `text-lg font-medium transition-colors hover:text-primary-600 ${
-                    isActive ? 'text-primary-600' : 'text-black'
+                  `text-2xl font-bold transition-colors hover:text-green-800 ${
+                    isActive ? 'text-green-800' : 'text-black'
                   }`
                 }
               >
