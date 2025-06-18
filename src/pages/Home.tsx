@@ -6,6 +6,9 @@ import AnimatedSection from '../components/common/AnimatedSection';
  
 import { newsItems } from '../data/newsData';
 import imageData from '../../images/Homepage.png';
+import { FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { SiGooglescholar } from 'react-icons/si';
+
 const Home = () => {
   // Get the three most recent news items
   const recentNews = [...newsItems].sort((a, b) => 
@@ -66,12 +69,16 @@ const Home = () => {
               Our Research
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link
-              to="/contact"
-              className="px-8 py-3 bg-white/10 hover:bg-white/20 rounded-md font-medium transition-colors backdrop-blur-sm"
-            >
-              Contact Us
-            </Link>
+
+              <a href="https://x.com/maksud1217" target="_blank" rel="noopener noreferrer" className="bg-[#1DA1F2] p-3 rounded-full text-white hover:opacity-80">
+            <FaTwitter className="w-5 h-5" />
+          </a>
+          <a href="https://scholar.google.com/citations?user=hky0f9UAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="bg-[#D14836] p-3 rounded-full text-white hover:opacity-80">
+            <SiGooglescholar className="w-5 h-5" />
+          </a>
+          <a href="https://www.linkedin.com/in/maksud-rahman-04559883/" target="_blank" rel="noopener noreferrer" className="bg-[#0077B5] p-3 rounded-full text-white hover:opacity-80">
+            <FaLinkedin className="w-5 h-5" />
+          </a>
           </motion.div>
         </div>
       </section>
