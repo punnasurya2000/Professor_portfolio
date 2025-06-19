@@ -8,7 +8,7 @@ const Teaching = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-900">
+      <section className="relative h-[250px] sm:h-[300px] md:h-[350px] bg-gray-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -17,12 +17,12 @@ const Teaching = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-wide relative z-20 text-white">
+        <div className="relative z-20 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 text-white">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
           >
             Teaching
           </motion.h1>
@@ -30,7 +30,7 @@ const Teaching = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl"
+            className="text-base sm:text-lg max-w-3xl"
           >
             Information about the courses taught by Dr. Rahman and educational resources for students.
           </motion.p>
@@ -38,15 +38,14 @@ const Teaching = () => {
       </section>
 
       {/* Teaching Philosophy */}
-      <section className="section bg-white">
-        <div className="container-wide">
+      <section className="bg-white py-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading 
             title="Teaching Philosophy" 
             subtitle="Our approach to education and mentoring in materials science and engineering."
           />
-          
           <AnimatedSection>
-            <div className="bg-gray-50 rounded-lg p-8">
+            <div className="bg-gray-50 rounded-lg p-6 sm:p-8">
               <p className="text-gray-700 mb-6">
                 My teaching philosophy centers on fostering a deep understanding of fundamental concepts while emphasizing their practical applications in real-world engineering problems. I believe in creating an engaging learning environment that encourages critical thinking, creativity, and collaboration among students.
               </p>
@@ -69,13 +68,12 @@ const Teaching = () => {
       </section>
 
       {/* Courses */}
-      <section className="section bg-gray-50">
-        <div className="container-wide">
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading 
             title="Courses" 
             subtitle="Current and past courses taught at the University of Houston."
           />
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {courses.map((course, index) => (
               <AnimatedSection key={course.id} delay={0.1 * index}>
@@ -89,9 +87,7 @@ const Teaching = () => {
                       {course.semester}
                     </span>
                   </div>
-                  
                   <p className="text-gray-700 mb-6">{course.description}</p>
-                  
                   {course.syllabus && (
                     <a 
                       href={course.syllabus}
@@ -109,14 +105,13 @@ const Teaching = () => {
       </section>
 
       {/* Teaching Resources */}
-      <section className="section bg-white">
-        <div className="container-wide">
+      <section className="bg-white py-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading 
             title="Teaching Resources" 
             subtitle="Educational materials and resources for students."
           />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatedSection>
               <div className="bg-gray-50 rounded-lg p-6 h-full">
                 <h3 className="text-xl font-semibold mb-4">Course Materials</h3>
@@ -131,7 +126,6 @@ const Teaching = () => {
                 </a>
               </div>
             </AnimatedSection>
-            
             <AnimatedSection delay={0.1}>
               <div className="bg-gray-50 rounded-lg p-6 h-full">
                 <h3 className="text-xl font-semibold mb-4">Recommended Textbooks</h3>
@@ -143,7 +137,6 @@ const Teaching = () => {
                 </ul>
               </div>
             </AnimatedSection>
-            
             <AnimatedSection delay={0.2}>
               <div className="bg-gray-50 rounded-lg p-6 h-full">
                 <h3 className="text-xl font-semibold mb-4">Online Resources</h3>
@@ -163,15 +156,14 @@ const Teaching = () => {
       </section>
 
       {/* Student Advising */}
-      <section className="section bg-gray-50">
-        <div className="container-wide">
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading 
             title="Student Advising" 
             subtitle="Information for current and prospective students seeking academic advising."
           />
-          
           <AnimatedSection>
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
               <h3 className="text-xl font-semibold mb-4">Office Hours</h3>
               <p className="text-gray-700 mb-6">
                 Dr. Rahman holds regular office hours for students enrolled in his courses and for advising graduate students. Current office hours for the semester are:
@@ -181,7 +173,6 @@ const Teaching = () => {
                 <li>Thursdays: 10:00 AM - 12:00 PM</li>
                 <li>By appointment (email to schedule)</li>
               </ul>
-              
               <h3 className="text-xl font-semibold mb-4">Advising Areas</h3>
               <p className="text-gray-700 mb-4">
                 Dr. Rahman provides academic advising in the following areas:
@@ -193,7 +184,6 @@ const Teaching = () => {
                 <li>Graduate school applications and preparation</li>
                 <li>Research project planning and execution</li>
               </ul>
-              
               <h3 className="text-xl font-semibold mb-4">Scheduling an Appointment</h3>
               <p className="text-gray-700">
                 To schedule an advising appointment outside of regular office hours, please email Dr. Rahman at mrahman19@uh.edu with your name, student ID, and a brief description of what you would like to discuss.

@@ -8,7 +8,7 @@ type Category = 'all' | 'publication' | 'award' | 'conference' | 'general';
 
 const News = () => {
   const [category, setCategory] = useState<Category>('all');
-  
+
   const filteredNews = newsItems
     .filter(item => category === 'all' || item.category === category)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -25,12 +25,12 @@ const News = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-wide relative z-20 text-white pt-24">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
           >
             News & Updates
           </motion.h1>
@@ -38,7 +38,7 @@ const News = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl"
+            className="text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
           >
             Stay updated with the latest happenings, achievements, and announcements from our lab.
           </motion.p>
@@ -46,21 +46,20 @@ const News = () => {
       </section>
 
       {/* News Section */}
-      <section className="section bg-white pt-10 mt-8">
-        <div className="container-wide">
-          <SectionHeading 
-            title="Lab News" 
-          />
+      <section className="bg-white pt-10 pb-20">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading title="Lab News" />
+
           {/* News Timeline */}
           <div className="space-y-12">
             {filteredNews.map((item, index) => (
               <AnimatedSection key={item.id} delay={0.1 * Math.min(index, 5)}>
-                <div className="relative pl-8 md:pl-0">
-                  {/* Timeline connector (hidden on mobile) */}
+                <div className="relative pl-6 md:pl-0">
+                  {/* Vertical Line Connector */}
                   <div className="hidden md:block absolute left-[7.5rem] top-0 bottom-0 w-0.5 bg-gray-200"></div>
-                  
+
                   <div className="md:grid md:grid-cols-[150px_1fr] gap-8">
-                    {/* Date */}
+                    {/* Date - Desktop */}
                     <div className="hidden md:block relative">
                       <div className="sticky top-32 text-right pr-8">
                         <span className="text-lg font-medium text-gray-900">
@@ -72,28 +71,29 @@ const News = () => {
                         <span className="block text-gray-500">
                           {new Date(item.date).getFullYear()}
                         </span>
-                        
-                        {/* Timeline dot */}
-                        <div className="absolute right-0 top-2 w-4 h-4 rounded-full bg-primary-600 transform translate-x-2"></div>
+                        <div className="absolute right-0 top-2 w-4 h-4 rounded-full bg-primary-600 translate-x-2" />
                       </div>
                     </div>
-                    
-                    {/* Mobile date display */}
-                    <div className="md:hidden mb-2 text-gray-500">
+
+                    {/* Date - Mobile */}
+                    <div className="md:hidden mb-2 text-sm text-gray-500">
                       {new Date(item.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
                       })}
                     </div>
-                    
-                    {/* Content */}
+
+                    {/* News Content */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                      
                       <div className="p-6">
-                        <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                        <p className="text-gray-700 mb-4 whitespace-pre-line">{item.content}</p>
-                        <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm capitalize">
+                        <h3 className="text-xl sm:text-2xl font-semibold mb-4">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4 whitespace-pre-line">
+                          {item.content}
+                        </p>
+                        <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm capitalize">
                           {item.category}
                         </span>
                       </div>
@@ -105,9 +105,6 @@ const News = () => {
           </div>
         </div>
       </section>
-
-      
-       
     </div>
   );
 };

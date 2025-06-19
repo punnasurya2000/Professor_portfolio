@@ -3,59 +3,53 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SectionHeading from '../components/common/SectionHeading';
 import AnimatedSection from '../components/common/AnimatedSection';
- 
+
 import { newsItems } from '../data/newsData';
 import imageData from '../../images/Homepage.png';
 import { FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { SiGooglescholar } from 'react-icons/si';
 
 const Home = () => {
-  // Get the three most recent news items
-  const recentNews = [...newsItems].sort((a, b) => 
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-  ).slice(0, 3);
+  const recentNews = [...newsItems]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <div>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
-      <div className="absolute inset-0 z-0 overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />
-  <img
-    src={imageData}
-    alt="Laboratory research"
-    className="w-full h-[140%] object-cover translate-y-[70px]"
-  />
-</div>
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />
+          <img
+            src={imageData}
+            alt="Laboratory research"
+            className="w-full h-[120%] sm:h-[140%] object-cover translate-y-16 sm:translate-y-[70px]"
+          />
+        </div>
 
-
-        <div className="container-wide relative z-20 text-white">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold leading-tight mb-6"
+            className="mb-6"
           >
-          <div className="flex items-center space-x-2">
-      <h1 className="font-thin text-7xl md:text-8xl tracking-widest">
-        Maksud Lab 
-      </h1>
-   
-    </div>
-
-
-
-
-
+            <div className="flex items-center space-x-2">
+              <h1 className="font-thin text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-widest">
+                Maksud Lab
+              </h1>
+            </div>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 max-w-2xl"
+            className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl"
           >
             Smart Materials and Additive Manufacturing Lab at the University of Houston
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,86 +58,88 @@ const Home = () => {
           >
             <Link
               to="/research"
-              className="px-8 py-3 bg-primary-600 hover:bg-primary-700 rounded-md font-medium transition-colors flex items-center"
+              className="px-6 sm:px-8 py-3 bg-primary-600 hover:bg-primary-700 rounded-md font-medium transition-colors flex items-center"
             >
               Our Research
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
 
-              <a href="https://x.com/maksud1217" target="_blank" rel="noopener noreferrer" className="bg-[#1DA1F2] p-3 rounded-full text-white hover:opacity-80">
-            <FaTwitter className="w-5 h-5" />
-          </a>
-          <a href="https://scholar.google.com/citations?user=hky0f9UAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="bg-[#D14836] p-3 rounded-full text-white hover:opacity-80">
-            <SiGooglescholar className="w-5 h-5" />
-          </a>
-          <a href="https://www.linkedin.com/in/maksud-rahman-04559883/" target="_blank" rel="noopener noreferrer" className="bg-[#0077B5] p-3 rounded-full text-white hover:opacity-80">
-            <FaLinkedin className="w-5 h-5" />
-          </a>
+            <a
+              href="https://x.com/maksud1217"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#1DA1F2] p-3 rounded-full text-white hover:opacity-80"
+            >
+              <FaTwitter className="w-5 h-5" />
+            </a>
+            <a
+              href="https://scholar.google.com/citations?user=hky0f9UAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#D14836] p-3 rounded-full text-white hover:opacity-80"
+            >
+              <SiGooglescholar className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/maksud-rahman-04559883/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#0077B5] p-3 rounded-full text-white hover:opacity-80"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </a>
           </motion.div>
         </div>
       </section>
 
       {/* Introduction Section */}
-      <section className="section bg-white">
-        <div className="container-wide">
-          <div className='Flex flex-col items-center justify-center text-center px-4 pb-2 max-w-3xl mx-auto'>
-          <h2 className="text-3xl md:text-4xl font-medium mb-6 text-gray-900">
-      Welcome to Our Lab
-    </h2>
-
+      <section className="bg-white py-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-medium text-gray-900">
+              Welcome to Our Lab
+            </h2>
           </div>
-        <div className="flex flex-col items-center justify-center text-center px-4 py-16 max-w-5xl mx-auto">
-  <AnimatedSection delay={0.2}>
-    
-    <p className="text-gray-700 text-lg mb-4">
-      I am an Assistant Professor in the Department of Mechanical and Aerospace Engineering at the University of Houston, USA. I completed my Ph.D. from Cornell University, USA, and B.Sc. from Bangladesh University of Engineering and Technology (BUET), Bangladesh.
-    </p>
 
-    <p className="text-gray-700 text-lg mb-4">
-      My primary academic interest lies in interdisciplinary research that integrates materials, design, and manufacturing. The overarching goal of my research is to design and develop futuristic multifunctional composite and nanocomposite structures for various structural and functional applications with an emphasis on advanced manufacturing, sustainable materials, and nature-inspired design. 
-    </p>
+          <div className="text-center max-w-5xl mx-auto">
+            <AnimatedSection delay={0.2}>
+              <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
+                I am an Assistant Professor in the Department of Mechanical and Aerospace Engineering at the University of Houston, USA. I completed my Ph.D. from Cornell University, USA, and B.Sc. from Bangladesh University of Engineering and Technology (BUET), Bangladesh.
+              </p>
+              <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
+                My primary academic interest lies in interdisciplinary research that integrates materials, design, and manufacturing. The overarching goal of my research is to design and develop futuristic multifunctional composite and nanocomposite structures for various structural and functional applications with an emphasis on advanced manufacturing, sustainable materials, and nature-inspired design.
+              </p>
+              <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
+                Central to my approach is leveraging the nanoscale features of materials to devise macroscale structures with optimized architectures through a fundamental understanding of the process-structure-property relationship.
+              </p>
+              <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
+                I hope you enjoy my website and find information here. If you are influenced to make science your way of life, please feel free to contact me. I value creativity, honesty, comprehensiveness, and persistence in every person with whom I work.
+              </p>
+              <p className="text-gray-800 text-lg font-semibold mb-5 pt-12">
+                All the best,<br />
+                Maksud Rahman
+              </p>
 
-    <p className="text-gray-700 text-lg mb-4">
-      Central to my approach is leveraging the nanoscale features of materials to devise macroscale structures with optimized architectures through a fundamental understanding of the process-structure-property relationship.
-    </p>
-
-    <p className="text-gray-700 text-lg mb-4">
-      I hope you enjoy my website and find information here. If you are influenced to make science your way of life, please feel free to contact me. I value creativity, honesty, comprehensiveness, and persistence in every person with whom I work.
-    </p>
-
-    <p className="text-gray-800 text-lg font-semibold mb-5 pt-20">
-      All the best,<br />
-      Maksud Rahman
-    </p>
-
-    <Link
-      to="/people"
-      className="text-primary-600 hover:text-primary-800 font-medium flex items-center justify-center transition-colors"
-    >
-      Meet Our Team
-      <ArrowRight className="ml-2 h-5 w-5" />
-    </Link>
-  </AnimatedSection>
-</div>
-
+              <Link
+                to="/people"
+                className="text-primary-600 hover:text-primary-800 font-medium flex items-center justify-center transition-colors"
+              >
+                Meet Our Team
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
-      {/* Research Highlights */}
-      
-      {/* Latest News */}
-      <section className="section bg-white pt-4">
-        <div className="container-wide">
-          <SectionHeading 
-            title="Latest News" 
-            centered
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* News Section */}
+      <section className="bg-white pt-8 pb-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading title="Latest News" centered />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {recentNews.map((news, index) => (
               <AnimatedSection key={news.id} delay={0.1 * index}>
                 <div className="bg-gray-50 rounded-lg overflow-hidden shadow-sm h-full">
-                  
                   <div className="p-6">
                     <span className="text-sm text-gray-500 mb-2 block">
                       {new Date(news.date).toLocaleDateString('en-US', {
@@ -162,7 +158,7 @@ const Home = () => {
               </AnimatedSection>
             ))}
           </div>
-          
+
           <div className="mt-12 text-center">
             <Link
               to="/news"
@@ -177,10 +173,10 @@ const Home = () => {
 
       {/* Call to Action */}
       <section className="py-16 bg-primary-900 text-white">
-        <div className="container-wide text-center">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-medium mb-6">Interested in Our Research?</h2>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
               We're always looking for talented students and potential collaborators who share our passion for advancing materials science and manufacturing technology.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -190,7 +186,6 @@ const Home = () => {
               >
                 Contact Us
               </Link>
-              
             </div>
           </AnimatedSection>
         </div>

@@ -28,12 +28,12 @@ const Research = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-wide relative z-20 text-white pt-24">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
           >
             Our Research
           </motion.h1>
@@ -41,7 +41,7 @@ const Research = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl"
+            className="text-base sm:text-lg max-w-3xl"
           >
             Discover the research areas that drive innovation in our lab.
           </motion.p>
@@ -49,45 +49,48 @@ const Research = () => {
       </section>
 
       {/* Research Areas Section */}
-      <section className="section bg-gray-50">
-        <div className="container-wide">
-          <SectionHeading title="Research Areas" subtitle="" centered={true} />
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading title="Research Areas" centered />
           <div className="flex flex-col gap-6">
             {researchAreas.map((area, index) => (
               <AnimatedSection key={area.id} delay={0.1 * index}>
                 <div
-                  className="bg-white rounded-lg overflow-hidden shadow-md h-full transition-all duration-300 hover:shadow-xl cursor-pointer"
+                  className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer"
                   onClick={() => handleAreaClick(area)}
                 >
-                  <div className="flex flex-col sm:flex-row h-64 w-full">
-                  <div className="w-full sm:w-1/4 h-64 overflow-hidden">
-                    <img
-                      src={area.image}
-                      alt={area.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    />
+                  <div className="flex flex-col sm:flex-row h-auto sm:h-64 w-full">
+                    <div className="w-full sm:w-1/3 h-56 sm:h-auto overflow-hidden">
+                      <img
+                        src={area.image}
+                        alt={area.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <div className="w-full sm:w-2/3 p-4 sm:p-6 flex flex-col justify-center">
+                      <h3 className="text-xl font-semibold mb-2">{area.title}</h3>
+                      <p className="text-gray-600 mb-2 line-clamp-3">{area.description}</p>
+                    </div>
                   </div>
-                  <div className="w-full sm:w-1/2 p-6 flex flex-col justify-center">
-                    <h3 className="text-xl font-semibold mb-2">{area.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{area.description}</p>
-                  </div>
-                </div>
-
                 </div>
               </AnimatedSection>
             ))}
           </div>
 
+          {/* Modal */}
           {selectedArea && (
-            <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={closeModal}>
+            <div
+              className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+              onClick={closeModal}
+            >
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white w-full h-full rounded-none shadow-none overflow-y-auto"
+                className="bg-white w-full max-w-5xl h-[90vh] rounded-lg shadow-lg overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="absolute top-10 right-12 z-10">
+                <div className="absolute top-6 right-6 z-10">
                   <button
                     onClick={closeModal}
                     className="text-gray-500 hover:text-black p-2 rounded-full hover:bg-gray-100 transition"
@@ -96,34 +99,38 @@ const Research = () => {
                     <X className="w-6 h-6" />
                   </button>
                 </div>
-                <div className="md:flex margin-top-16 py-1 px-1">
-                  <div className="md:w-2/5">
+
+                <div className="flex flex-col md:flex-row mt-12 px-4 sm:px-8 pb-8 gap-6">
+                  <div className="md:w-2/5 h-64 md:h-auto overflow-hidden rounded-lg">
                     <img
                       src={selectedArea.image}
                       alt={selectedArea.title}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="md:w-3/5 p-8">
+                  <div className="md:w-3/5">
                     <h2 className="text-2xl font-semibold mb-4">{selectedArea.title}</h2>
                     <p className="text-gray-700 mb-6">{selectedArea.description}</p>
+
                     {selectedArea.keywords.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-6">
                         {selectedArea.keywords.map((keyword, i) => (
-                          <span key={i} className="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm">
+                          <span
+                            key={i}
+                            className="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm"
+                          >
                             {keyword}
                           </span>
                         ))}
                       </div>
                     )}
-                    <div className="mt-6">
-                      <button
-                        onClick={closeModal}
-                        className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
-                      >
-                        Close
-                      </button>
-                    </div>
+
+                    <button
+                      onClick={closeModal}
+                      className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </motion.div>

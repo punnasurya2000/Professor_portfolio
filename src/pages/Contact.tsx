@@ -16,12 +16,12 @@ const Contact = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-wide relative z-20 text-white">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
           >
             Contact Us
           </motion.h1>
@@ -29,7 +29,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl"
+            className="text-lg sm:text-xl max-w-3xl"
           >
             Get in touch with our lab for collaborations, inquiries, or to learn more about our research.
           </motion.p>
@@ -37,17 +37,17 @@ const Contact = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="section bg-white py-12">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            {/* Rahman Lab Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            {/* Rahman Lab Info */}
             <AnimatedSection>
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 sm:p-8">
                 <SectionHeading title="Rahman Lab" />
-                <div className="space-y-5 mt-4">
+                <div className="space-y-6 mt-4">
                   <div className="flex items-start">
                     <MapPin className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
-                    <div className="ml-4">
+                    <div className="ml-4 text-sm sm:text-base">
                       <h4 className="text-lg font-medium mb-1">Address</h4>
                       <p className="text-gray-700 leading-relaxed">
                         Department of Mechanical Engineering<br />
@@ -59,10 +59,13 @@ const Contact = () => {
 
                   <div className="flex items-start">
                     <Mail className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
-                    <div className="ml-4">
+                    <div className="ml-4 text-sm sm:text-base">
                       <h4 className="text-lg font-medium mb-1">Email</h4>
                       <p className="text-gray-700">
-                        <a href="mailto:mrahman19@uh.edu" className="hover:text-primary-600 transition-colors">
+                        <a
+                          href="mailto:mrahman19@uh.edu"
+                          className="hover:text-primary-600 transition-colors"
+                        >
                           mrahman19@uh.edu
                         </a>
                       </p>
@@ -71,10 +74,13 @@ const Contact = () => {
 
                   <div className="flex items-start">
                     <Phone className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
-                    <div className="ml-4">
+                    <div className="ml-4 text-sm sm:text-base">
                       <h4 className="text-lg font-medium mb-1">Phone</h4>
                       <p className="text-gray-700">
-                        <a href="tel:+17137436766" className="hover:text-primary-600 transition-colors">
+                        <a
+                          href="tel:+17137436766"
+                          className="hover:text-primary-600 transition-colors"
+                        >
                           (713) 743-6766
                         </a>
                       </p>
@@ -83,10 +89,15 @@ const Contact = () => {
 
                   <div className="flex items-start">
                     <Globe className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
-                    <div className="ml-4">
+                    <div className="ml-4 text-sm sm:text-base">
                       <h4 className="text-lg font-medium mb-1">Website</h4>
                       <p className="text-gray-700">
-                        <a href="https://maksudrahman.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">
+                        <a
+                          href="https://maksudrahman.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary-600 transition-colors"
+                        >
                           maksudrahman.com
                         </a>
                       </p>
@@ -96,12 +107,12 @@ const Contact = () => {
               </div>
             </AnimatedSection>
 
-            {/* Find Us Map Section */}
+            {/* Google Map Embed */}
             <AnimatedSection delay={0.2}>
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 sm:p-8">
                 <SectionHeading title="Find Us" />
                 <div className="mt-4">
-                  <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-md">
+                  <div className="w-full h-[300px] sm:h-[400px] rounded-lg overflow-hidden shadow-md">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7507.268344293069!2d-95.34396182415117!3d29.722856175087074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640be59ddbfffff%3A0xf65ddb544650f173!2sEngineering%20Building%201-Cullen%20College%20of%20Engineering!5e1!3m2!1sen!2sus!4v1749091331104!5m2!1sen!2sus"
                       allowFullScreen

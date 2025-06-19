@@ -25,37 +25,35 @@ const Header = () => {
         isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
-      <div className="container-wide flex justify-between items-center">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <Link
           to="/"
-          className="text-3xl font-bold text-green-900 hover:text-green-900 transition-colors"
+          className="text-2xl sm:text-3xl font-bold text-green-900 hover:text-green-900 transition-colors"
         >
           Maksud Lab
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          {['Home', 'Team', 'Research','Publications', 'News', 'Contact'].map(
-            (item) => (
-              <NavLink
-                key={item}
-                to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                className={({ isActive }) =>
-                  `text-2xl font-bold transition-colors hover:text-green-800 ${
-                    isActive ? 'text-green-800' : 'text-black'
-                  }`
-                }
-              >
-                {item}
-              </NavLink>
-            )
-          )}
+        <nav className="hidden md:flex space-x-6 lg:space-x-8">
+          {['Home', 'Team', 'Research', 'Publications', 'News', 'Contact'].map((item) => (
+            <NavLink
+              key={item}
+              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+              className={({ isActive }) =>
+                `text-lg lg:text-xl font-semibold transition-colors hover:text-green-800 ${
+                  isActive ? 'text-green-800' : 'text-black'
+                }`
+              }
+            >
+              {item}
+            </NavLink>
+          ))}
         </nav>
 
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="md:hidden text-gray-800 hover:text-primary-600 transition-colors"
+          className="md:hidden text-gray-800 hover:text-green-800 transition-colors"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -65,24 +63,22 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 animate-fade-in">
-          <nav className="flex flex-col space-y-4 px-4">
-            {['Home', 'Team', 'Research','Publications', 'News', 'Contact'].map(
-              (item) => (
-                <NavLink
-                  key={item}
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className={({ isActive }) =>
-                    `text-lg font-medium transition-colors hover:text-primary-600 ${
-                      isActive ? 'text-primary-600' : 'text-gray-800'
-                    }`
-                  }
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </NavLink>
-              )
-            )}
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md z-40 animate-fade-in">
+          <nav className="flex flex-col space-y-4 px-4 py-4">
+            {['Home', 'Team', 'Research', 'Publications', 'News', 'Contact'].map((item) => (
+              <NavLink
+                key={item}
+                to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors hover:text-green-800 ${
+                    isActive ? 'text-green-800' : 'text-gray-800'
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item}
+              </NavLink>
+            ))}
           </nav>
         </div>
       )}
