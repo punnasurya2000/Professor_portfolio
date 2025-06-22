@@ -63,15 +63,6 @@ const Home = () => {
               Our Research
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-
-            <a
-              href="https://x.com/maksud1217"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#1DA1F2] p-3 rounded-full text-white hover:opacity-80"
-            >
-              <FaTwitter className="w-5 h-5" />
-            </a>
             <a
               href="https://scholar.google.com/citations?user=hky0f9UAAAAJ&hl=en"
               target="_blank"
@@ -87,6 +78,14 @@ const Home = () => {
               className="bg-[#0077B5] p-3 rounded-full text-white hover:opacity-80"
             >
               <FaLinkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://x.com/maksud1217"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#1DA1F2] p-3 rounded-full text-white hover:opacity-80"
+            >
+              <FaTwitter className="w-5 h-5" />
             </a>
           </motion.div>
         </div>

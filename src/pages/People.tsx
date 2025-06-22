@@ -26,7 +26,7 @@ const People = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[250px] bg-gray-900">
+      <section className="relative h-[250px] bg-gray-900 mt-16 ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -48,9 +48,8 @@ const People = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base sm:text-lg max-w-3xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
           >
-            Meet the researchers, students, and staff who make our lab's work possible.
           </motion.p>
         </div>
       </section>
@@ -58,7 +57,6 @@ const People = () => {
       {/* People Section */}
       <section className="bg-white py-16">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading title="Team Members" centered />
 
           {/* People Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8">

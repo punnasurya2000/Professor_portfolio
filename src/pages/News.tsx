@@ -16,7 +16,7 @@ const News = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[250px] bg-gray-900">
+      <section className="relative h-[250px] bg-gray-900 mt-16 ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -40,7 +40,6 @@ const News = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
           >
-            Stay updated with the latest happenings, achievements, and announcements from our lab.
           </motion.p>
         </div>
       </section>
@@ -48,7 +47,7 @@ const News = () => {
       {/* News Section */}
       <section className="bg-white pt-10 pb-20">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading title="Lab News" />
+          
 
           {/* News Timeline */}
           <div className="space-y-12">

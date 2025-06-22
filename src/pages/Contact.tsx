@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-16 bg-gray-900">
+      <section className="relative h-[250px] bg-gray-900 mt-16 ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -16,7 +16,7 @@ const Contact = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,9 +29,8 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg sm:text-xl max-w-3xl"
+            className="text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
           >
-            Get in touch with our lab for collaborations, inquiries, or to learn more about our research.
           </motion.p>
         </div>
       </section>

@@ -21,9 +21,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
-      }`}
+    className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+    }`}
+    
     >
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <Link
@@ -40,7 +41,7 @@ const Header = () => {
               key={item}
               to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
               className={({ isActive }) =>
-                `text-lg lg:text-xl font-semibold transition-colors hover:text-green-800 ${
+                `text-2xl sm:text-2xl font-bold transition-colors hover:text-green-800 ${
                   isActive ? 'text-green-800' : 'text-black'
                 }`
               }
