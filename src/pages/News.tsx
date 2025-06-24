@@ -16,7 +16,7 @@ const News = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[250px] bg-gray-900 mt-16 ">
+      <section className="relative h-[160px] bg-gray-900 mt-16 ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -25,12 +25,12 @@ const News = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-5xl font-raleway leading-tight mb-4"
           >
             News & Updates
           </motion.h1>
@@ -85,18 +85,31 @@ const News = () => {
 
                     {/* News Content */}
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                      <div className="p-6">
-                        <h3 className="text-xl sm:text-2xl font-semibold mb-4">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4 whitespace-pre-line">
-                          {item.content}
-                        </p>
-                        <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm capitalize">
-                          {item.category}
-                        </span>
+                      <div className="flex flex-col sm:flex-row p-6 gap-4">
+                        {/* Text Content */}
+                        <div className="flex-1">
+                          <h3 className="text-xl sm:text-2xl font-semibold mb-4">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                            {item.content}
+                          </p>
+                        </div>
+
+                        {/* Image (Right Side) */}
+                        {item.image && (
+                          <div className="sm:w-64 w-full sm:flex-shrink-0">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-56 object-cover rounded-md"
+
+                          />
+                        </div>
+                        )}
                       </div>
                     </div>
+
                   </div>
                 </div>
               </AnimatedSection>

@@ -7,33 +7,35 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[250px] bg-gray-900 mt-16 ">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/60 z-10" />
-          <img
-            src="https://images.pexels.com/photos/2451616/pexels-photo-2451616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Contact us"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
-          >
-            Contact Us
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
-          >
-          </motion.p>
-        </div>
-      </section>
+      <section className="relative h-[160px] bg-gray-900 mt-16">
+  <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 bg-black/60 z-10" />
+    <img
+      src="https://images.pexels.com/photos/2451616/pexels-photo-2451616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt="Contact us"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-2xl sm:text-3xl md:text-5xl font-raleway leading-tight mb-4"
+    >
+      Contact
+    </motion.h1>
+    <motion.p
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
+    >
+      {/* optional subtitle */}
+    </motion.p>
+  </div>
+</section>
+
 
       {/* Contact Information */}
       <section className="py-12 bg-white">
@@ -42,16 +44,21 @@ const Contact = () => {
             {/* Rahman Lab Info */}
             <AnimatedSection>
               <div className="bg-gray-50 rounded-lg p-6 sm:p-8">
-                <SectionHeading title="Rahman Lab" />
+                <h4 className='font-raleway font-bold text-lg'>Inquiries should be directed to Professor Maksud Rahman</h4>
+                
                 <div className="space-y-6 mt-4">
                   <div className="flex items-start">
                     <MapPin className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div className="ml-4 text-sm sm:text-base">
                       <h4 className="text-lg font-medium mb-1">Address</h4>
                       <p className="text-gray-700 leading-relaxed">
-                        Department of Mechanical Engineering<br />
-                        University of Houston<br />
-                        4726 Calhoun Rd, Houston, TX 77204
+                      University of Houston <br/>
+                      Cullen College of Engineering <br/>
+                      Department of Mechanical and Aerospace Engineering <br/>
+                      Engineering Building 1, Room N213 <br/>
+                      4226 Martin Luther King Boulevard<br/>
+                      Houston, TX 77204-4006<br/>
+                    
                       </p>
                     </div>
                   </div>
@@ -62,10 +69,10 @@ const Contact = () => {
                       <h4 className="text-lg font-medium mb-1">Email</h4>
                       <p className="text-gray-700">
                         <a
-                          href="mailto:mrahman19@uh.edu"
+                          href="mailto:maksud@uh.edu"
                           className="hover:text-primary-600 transition-colors"
                         >
-                          mrahman19@uh.edu
+                          maksud@uh.edu
                         </a>
                       </p>
                     </div>
@@ -80,28 +87,13 @@ const Contact = () => {
                           href="tel:+17137436766"
                           className="hover:text-primary-600 transition-colors"
                         >
-                          (713) 743-6766
+                          (713)-743-4500
                         </a>
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start">
-                    <Globe className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
-                    <div className="ml-4 text-sm sm:text-base">
-                      <h4 className="text-lg font-medium mb-1">Website</h4>
-                      <p className="text-gray-700">
-                        <a
-                          href="https://maksudrahman.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-primary-600 transition-colors"
-                        >
-                          maksudrahman.com
-                        </a>
-                      </p>
-                    </div>
-                  </div>
+                
                 </div>
               </div>
             </AnimatedSection>
@@ -109,7 +101,7 @@ const Contact = () => {
             {/* Google Map Embed */}
             <AnimatedSection delay={0.2}>
               <div className="bg-gray-50 rounded-lg p-6 sm:p-8">
-                <SectionHeading title="Find Us" />
+                
                 <div className="mt-4">
                   <div className="w-full h-[300px] sm:h-[400px] rounded-lg overflow-hidden shadow-md">
                     <iframe

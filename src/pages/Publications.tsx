@@ -33,7 +33,7 @@ const Publications = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[250px] bg-gray-900 mt-16 ">
+      <section className="relative h-[160px] bg-gray-900 mt-16 ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -42,12 +42,12 @@ const Publications = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-5xl font-raleway leading-tight mb-4"
           >
             Publications
           </motion.h1>
@@ -62,11 +62,11 @@ const Publications = () => {
       </section>
 
       {/* Publications Section */}
-      <section className="bg-white py-16 mt-16">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white  mt-10">
+        <div className="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-4 mb-10">
+          <div className="flex flex-wrap gap-1 mb-10">
             {[
               { value: 'all', label: 'All' },
               { value: 'journal', label: 'Journal Articles' },
@@ -129,41 +129,10 @@ const Publications = () => {
                           )}
                         </p>
 
-                        {/* Abstract */}
-                        {publication.abstract && (
-                          <div className="mt-3">
-                            <button
-                              onClick={() => toggleExpand(publication.id)}
-                              className="text-primary-600 hover:text-primary-800 font-medium text-sm sm:text-base"
-                            >
-                              {expandedId === publication.id ? 'Hide Abstract' : 'Show Abstract'}
-                            </button>
-
-                            {expandedId === publication.id && (
-                              <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="mt-3 p-4 bg-white rounded-md text-gray-700 text-sm sm:text-base"
-                              >
-                                <h4 className="font-medium mb-2">Abstract</h4>
-                                <p>{publication.abstract}</p>
-                              </motion.div>
-                            )}
-                          </div>
-                        )}
+                     
 
                         {/* Category Tag */}
-                        <div className="mt-4">
-                          <span className="inline-block px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs sm:text-sm capitalize">
-                            {publication.category === 'journal'
-                              ? 'Journal Article'
-                              : publication.category === 'conference'
-                              ? 'Conference Paper'
-                              : 'Book Chapter'}
-                          </span>
-                        </div>
+            
                       </div>
                     </div>
                   ))}

@@ -47,7 +47,9 @@ export default {
       },
       fontFamily: {
         sans: ['Inter var', 'Inter','Raleway', 'system-ui', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
       },
+      
       spacing: {
         '128': '32rem',
         '144': '36rem',

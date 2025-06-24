@@ -26,7 +26,7 @@ const People = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[250px] bg-gray-900 mt-16 ">
+      <section className="relative h-[160px] bg-gray-900 mt-16 ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
@@ -35,12 +35,12 @@ const People = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+        <div className="relative z-20 text-white max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-5xl font-raleway leading-tight mb-4"
           >
             Our Team
           </motion.h1>
@@ -76,6 +76,7 @@ const People = () => {
                   <div className="p-4 sm:p-6">
                     <h3 className="text-lg sm:text-xl font-semibold mb-1">{person.name}</h3>
                     <p className="text-sm sm:text-base text-gray-600">{person.title}</p>
+                    
                   </div>
                 </div>
               </AnimatedSection>

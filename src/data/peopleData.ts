@@ -1,3 +1,4 @@
+import maksud from '../../images/maksud1.jpg';
 export interface Person {
   id: string;
   name: string;
@@ -13,9 +14,9 @@ export interface Person {
 export const people: Person[] = [
   {
     id: 'prof-rahman',
-    name: 'Dr. Maksud Rahman',
-    title: 'Assistant Professor',
-    image: 'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Prof. Maksud Rahman',
+    title: 'PI & Director',
+    image: maksud,
     bio: 'Dr. Rahman leads the Smart Materials and Additive Manufacturing Lab at the University of Houston. His research focuses on multifunctional composites, additive manufacturing, and biomimetic materials.',
     education: [
       'Ph.D. in Mechanical Engineering, University of California, 2015',
