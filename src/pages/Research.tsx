@@ -27,7 +27,11 @@ const Research = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+<<<<<<< HEAD
             className="text-2xl sm:text-4xl font-raleway md:text-5xl leading-tight mb-4"
+=======
+            className="text-2xl sm:text-3xl md:text-5xl font-raleway leading-tight mb-4"
+>>>>>>> d28bbb17b40977067b3f32750a8dade437c3bca0
           >
             Research Themes
           </motion.h1>

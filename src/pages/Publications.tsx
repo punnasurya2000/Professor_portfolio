@@ -110,23 +110,19 @@ const Publications = () => {
 
                       {/* Content */}
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl font-medium mb-1">{publication.title}</h3>
-                        <p className="text-gray-700 text-sm sm:text-base mb-2">{publication.authors}</p>
-                        <p className="text-gray-600 text-sm sm:text-base mb-4">
-                          <span className="font-medium">{publication.journal}</span>, {publication.year}
-                          {publication.doi && (
-                            <>
-                              {' · '}
-                              <a
+                        <h3 className="text-lg sm:text-xl font-medium mb-1">
+                        <a
                                 href={`https://doi.org/${publication.doi}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-primary-600 hover:text-primary-800"
                               >
-                                DOI: {publication.doi}
-                              </a>
-                            </>
-                          )}
+                          {publication.title}
+                          </a>
+                        </h3>
+                        <p className="text-gray-700 text-sm sm:text-base mb-2">{publication.authors}</p>
+                        <p className="text-gray-600 text-sm sm:text-base mb-4">
+                          <span className="font-medium">{publication.journal}</span>, {publication.year}
                         </p>
 
                      

@@ -8,7 +8,7 @@ import introBg from '../../images/bacterial_cellulose.png'; // adjust path based
 
 import { newsItems } from '../data/newsData';
 import imageData from '../../images/green-energy.jpg';
-import { FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { SiGooglescholar } from 'react-icons/si';
 
 const Home = () => {
