@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Link as LinkIcon, X } from 'lucide-react';
-import SectionHeading from '../components/common/SectionHeading';
 import AnimatedSection from '../components/common/AnimatedSection';
 import { people, Person } from '../data/peopleData';
+import { SiGooglescholar, SiLinkedin } from 'react-icons/si';
+
+
 
 type Category = 'all' | 'faculty' | 'postdoc' | 'phd' | 'masters' | 'undergrad' | 'alumni';
 
@@ -66,18 +68,51 @@ const People = () => {
                   className="bg-gray-50 rounded-lg overflow-hidden shadow-md h-full transition-all duration-300 hover:shadow-lg cursor-pointer"
                   onClick={() => handlePersonClick(person)}
                 >
-                  <div className="h-64 overflow-hidden">
+                  <div className="aspect-[3/4] w-full overflow-hidden bg-white">
                     <img
                       src={person.image}
                       alt={person.name}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
-                  <div className="p-4 sm:p-6">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-1">{person.name}</h3>
-                    <p className="text-sm sm:text-base text-gray-600">{person.title}</p>
-                    
+
+                  <div className="p-4 text-center">
+                  <h3 className="font-raleway text-[17px] font-semibold text-gray-900 mb-1">{person.name}</h3>
+                  <p className="text-[15px] text-gray-600 font-normal mb-2">{person.title}</p>
+                  
+                  <div className="flex justify-center gap-3 mt-2">
+                    {person.googlescholar && (
+                      <a
+                        href={person.googlescholar}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#D14836] p-2 rounded-full text-white hover:opacity-80"
+                      >
+                        <SiGooglescholar className="w-5 h-5" />
+                      </a>
+                    )}
+                    {person.linkedin && (
+                      <a
+                        href={person.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#0A66C2] p-2 rounded-full text-white hover:opacity-80"
+                      >
+                        <SiLinkedin className="w-5 h-5" />
+                      </a>
+                    )}
+                    {person.email && (
+                      <a
+                        href={`mailto:${person.email}`}
+                        className="bg-gray-600 p-2 rounded-full text-white hover:opacity-80"
+                      >
+                        <Mail className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
+                </div>
+
+
                 </div>
               </AnimatedSection>
             ))}
