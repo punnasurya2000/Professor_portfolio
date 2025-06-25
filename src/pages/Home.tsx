@@ -144,7 +144,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {recentNews.map((news, index) => (
               <AnimatedSection key={news.id} delay={0.1 * index}>
-                <div className="bg-gray-50 rounded-lg overflow-hidden shadow-sm h-full">
+                <div className="bg-gray-50 rounded-lg overflow-hidden shadow-sm h-full transition-transform transform hover:scale-105">
                   <div className="p-6">
                     <span className="text-sm text-gray-500 mb-2 block">
                       {new Date(news.date).toLocaleDateString('en-US', {

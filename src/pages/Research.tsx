@@ -1,26 +1,18 @@
-import { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { X } from 'lucide-react';
-import SectionHeading from '../components/common/SectionHeading';
-import AnimatedSection from '../components/common/AnimatedSection';
-import { researchAreas, ResearchArea } from '../data/researchData';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { researchAreas } from '../data/researchData';
 
 const Research = () => {
-  const [selectedArea, setSelectedArea] = useState<ResearchArea | null>(null);
+  const { areaId, domainId } = useParams<{ areaId?: string; domainId?: string }>();
+  const navigate = useNavigate();
 
-  const handleAreaClick = (area: ResearchArea) => {
-    setSelectedArea(area);
-  };
-
-  const closeModal = () => {
-    setSelectedArea(null);
-  };
+  const selectedArea = researchAreas.find((a) => a.id === areaId);
+  const selectedDomain = selectedArea?.domains.find((d) => d.id === domainId);
 
   return (
-    <div>
+    <div >
       {/* Hero Section */}
-     
-
       <section className="relative h-[160px] bg-gray-900 mt-16 ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
@@ -35,9 +27,9 @@ const Research = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-2xl sm:text-4xl font-raleway md:text-5xl  leading-tight mb-4"
+            className="text-2xl sm:text-4xl font-raleway md:text-5xl leading-tight mb-4"
           >
-            Research
+            Research Themes
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -45,100 +37,128 @@ const Research = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
           >
+            
           </motion.p>
         </div>
       </section>
-      
 
-      {/* Research Areas Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6">
-            {researchAreas.map((area, index) => (
-              <AnimatedSection key={area.id} delay={0.1 * index}>
-                <div
-                  className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer"
-                  onClick={() => handleAreaClick(area)}
-                >
-                  <div className="flex flex-col sm:flex-row h-auto sm:h-64 w-full">
-                    <div className="w-full sm:w-1/3 h-56 sm:h-auto overflow-hidden">
-                      <img
-                        src={area.image}
-                        alt={area.title}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                    </div>
-                    <div className="w-full sm:w-2/3 p-4 sm:p-6 flex flex-col justify-center">
-                      <h3 className="text-xl font-semibold mb-2">{area.title}</h3>
-                      <p className="text-gray-600 mb-2 line-clamp-3">{area.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+      <div className="max-w-7xl mx-auto px-4 py-12 mb-24">
 
-          {/* Modal */}
-          {selectedArea && (
-            <div
-              className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
-              onClick={closeModal}
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white w-full max-w-5xl h-[90vh] rounded-lg shadow-lg overflow-y-auto"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="absolute top-6 right-6 z-10">
-                  <button
-                    onClick={closeModal}
-                    className="text-gray-500 hover:text-black p-2 rounded-full hover:bg-gray-100 transition"
-                    aria-label="Close"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                </div>
+        {/* 1. Research Areas Grid (no areaId in URL) */}
+   {!areaId && (
+  <div className="grid gap-8 mt-12 grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))]">
 
-                <div className="flex flex-col md:flex-row mt-12 px-4 sm:px-8 pb-8 gap-6">
-                  <div className="md:w-2/5 h-64 md:h-auto overflow-hidden rounded-lg">
-                    <img
-                      src={selectedArea.image}
-                      alt={selectedArea.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:w-3/5">
-                    <h2 className="text-2xl font-semibold mb-4">{selectedArea.title}</h2>
-                    <p className="text-gray-700 mb-6">{selectedArea.description}</p>
+    {researchAreas.map((area) => (
+      <Link
+        to={`/research/${area.id}`}
+        key={area.id}
+        className="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
+      >
+        {/* Background Image */}
+        <img
+          src={area.image}
+          alt={area.title}
+          className="w-full h-100 object-cover"
+        />
 
-                    {selectedArea.keywords.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {selectedArea.keywords.map((keyword, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 bg-gray-200 text-gray-800 rounded-full text-sm"
-                          >
-                            {keyword}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    <button
-                      onClick={closeModal}
-                      className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md transition-colors"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          )}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10 flex flex-col justify-center items-center text-white px-4 text-center transition duration-300 group-hover:bg-black/60">
+          {/* Always visible title */}
+          <h1 className="text-2xl font-bold mb-10">{area.title}</h1>
+          
+          {/* Only visible on hover */}
+          <p className="text-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {area.description || 'No description available.'}
+          </p>
         </div>
-      </section>
+      </Link>
+    ))}
+  </div>
+)}
+
+        {/* 2. Domains Grid */}
+       {areaId && !domainId && selectedArea && (
+  <div>
+    <button
+      className="mb-4 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+      onClick={() => navigate('/research')}
+    >
+      ← Back to Research Areas
+    </button>
+    <h2 className="text-3xl mb-6 text-center">{selectedArea.title}</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 px-14 py-3">
+      {selectedArea.domains.map((domain) => (
+        <Link
+          key={domain.id}
+          to={`/research/${areaId}/${domain.id}`}
+          className="relative cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
+        >
+          <img
+            src={domain.image}
+            alt={domain.title}
+            className="w-full h-80 object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <h3 className="text-white text-xl font-sans text-center px-2">
+              {domain.title}
+            </h3>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+)}
+
+        {/* 3. Projects List under Domain */}
+{areaId && domainId && selectedDomain && (
+  <div>
+    <button
+      className="mb-4 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+      onClick={() => navigate(`/research/${areaId}`)}
+    >
+      ← Back to Domains
+    </button>
+    <h2 className="text-3xl font-bold mb-6 text-center">{selectedDomain.title} Projects</h2>
+    <div className="flex items-center justify-center min-h-[200px] px-4">
+  <p className="text-lg mb-8 text-center px-17">
+    {selectedDomain.description}
+  </p>
+</div>
+    <div className="space-y-6">
+      {selectedDomain.projects.map((project) => (
+        <div
+          key={project.id}
+          className="flex flex-col sm:flex-row bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition w-full max-w-full"
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full sm:w-64 h-auto object-cover flex-shrink-0"
+          />
+          <div className="p-6 flex flex-col justify-center flex-grow">
+            <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+            <p className="text-gray-700 whitespace-pre-line">{project.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+
+
+        {/* Optional: Show error if invalid areaId or domainId */}
+        {areaId && !selectedArea && (
+          <div className="text-center mt-10 text-red-600 font-semibold">
+            Research area not found.
+          </div>
+        )}
+        {domainId && !selectedDomain && (
+          <div className="text-center mt-10 text-red-600 font-semibold">
+            Domain not found.
+          </div>
+        )}
+      </div>
     </div>
   );
 };

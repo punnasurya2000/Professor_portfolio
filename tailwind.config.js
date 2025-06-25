@@ -49,7 +49,10 @@ export default {
         sans: ['Inter var', 'Inter','Raleway', 'system-ui', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
       },
-      
+      fontSize: {
+        'xxl': '1.20rem', // custom size (example)
+        'huge': '2.75rem',
+      },
       spacing: {
         '128': '32rem',
         '144': '36rem',
